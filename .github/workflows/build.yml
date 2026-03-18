@@ -27,8 +27,8 @@ jobs:
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
-          name: Cubex-AntiCheat
-          path: target/CubexAntiCheat-*.jar
+          name: CubexStats
+          path: target/Cubex-StatsSync-*.jar
           if-no-files-found: error
           retention-days: 90
  
