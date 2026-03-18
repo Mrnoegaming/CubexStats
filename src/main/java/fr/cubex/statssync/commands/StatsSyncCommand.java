@@ -21,8 +21,7 @@ public class StatsSyncCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command,
                              @NotNull String label, @NotNull String[] args) {
-        String prefix = plugin.getConfig().getString("messages.prefix", "[CubeX] ");
-        prefix = colorize(prefix);
+             final String prefix = colorize(plugin.getConfig().getString("messages.prefix", "[CubeX] "));
 
         if (!sender.hasPermission("cubex.statssync.admin")) {
             sender.sendMessage(prefix + colorize(plugin.getConfig().getString("messages.no-permission", "&cPermission refusée.")));
