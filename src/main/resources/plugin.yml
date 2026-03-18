@@ -1,0 +1,19 @@
+name: Cubex-StatsSync
+version: '${project.version}'
+main: fr.cubex.statssync.CubexStatsSync
+api-version: '1.21'
+description: Synchronise les stats CubeX vers MariaDB
+authors: [ CubeX ]
+depend:
+  - PlaceholderAPI
+
+commands:
+  statssync:
+    description: Commandes de gestion de la synchronisation
+    usage: /statssync <reload|sync>
+    permission: cubex.statssync.admin
+
+permissions:
+  cubex.statssync.admin:
+    description: Accès aux commandes admin StatsSync
+    default: op

@@ -1,0 +1,32 @@
+# =============================================
+#         Cubex-StatsSync - Configuration
+# =============================================
+
+database:
+  host: "localhost"
+  port: 3306
+  name: "cubexstats"
+  username: "pterodactyl"
+  password: "ton_mot_de_passe"
+  # Taille du pool de connexions
+  pool-size: 5
+
+sync:
+  # Intervalle de sync automatique (en secondes)
+  interval: 300
+  # Sync aussi à la déconnexion du joueur
+  on-quit: true
+  # Sync aussi à la connexion (init de la ligne si absente)
+  on-join: true
+
+# Placeholders à récupérer (via PlaceholderAPI)
+placeholders:
+  kills: "%cubex_kill%"
+  deaths: "%cubex_death%"
+  time-played-hours: "%cubex_statistic_time_played:hours%"
+
+messages:
+  prefix: "&8[&6CubeX&8] &r"
+  reload-success: "&aConfiguration rechargée avec succès."
+  sync-success: "&aSynchronisation manuelle terminée. &7(%count% joueurs)"
+  no-permission: "&cVous n'avez pas la permission."
