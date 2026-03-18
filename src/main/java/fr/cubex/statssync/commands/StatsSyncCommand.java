@@ -40,7 +40,7 @@ public class StatsSyncCommand implements CommandExecutor, TabCompleter {
                 sender.sendMessage(prefix + colorize(plugin.getConfig().getString("messages.reload-success", "&aRechargé.")));
             }
             case "sync" -> {
-                int count = plugin.getServer().getOnlinePlayers().size();
+                final int count = plugin.getServer().getOnlinePlayers().size();
                 plugin.getServer().getScheduler().runTaskAsynchronously(plugin, () -> {
                     new StatsSyncTask(plugin).syncAll(plugin.getServer().getOnlinePlayers());
                     String msg = plugin.getConfig().getString("messages.sync-success", "&aSync OK (%count%)")
